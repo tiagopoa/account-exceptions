@@ -1,5 +1,6 @@
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -36,6 +37,10 @@ public class Program {
 		System.out.println("New balance: " + account.getBalance());
 		} catch (DomainException e) {
 			System.out.println("Withdraw error: " + e.getMessage());
+		} catch (InputMismatchException e) {			
+			e.printStackTrace();
+		} catch (RuntimeException e) {
+			System.out.println("Unexpected error");
 		}
 		
 		
